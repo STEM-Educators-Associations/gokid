@@ -1,6 +1,8 @@
 # GoKid Mobile Application
 
-**GoKid** is a mobile application developed to enhance **communication** between parents and children with special needs. This app provides a safe, controlled environment where children can interact with familiar images, promoting engagement and understanding, while offering parents tools to manage and personalize the experience.
+**GoKid** is a mobile application developed to enhance **communication** between parents and children with special
+needs. This app provides a safe, controlled environment where children can interact with familiar images, promoting
+engagement and understanding, while offering parents tools to manage and personalize the experience.
 
 ---
 
@@ -9,8 +11,7 @@
 <p >
   <a href="https://apps.apple.com/tr/app/gokid/id6654923599?l=tr">
     <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="50">
-  </a> 
- 
+  </a>
   <a href="https://play.google.com/store/apps/details?id=dev.erenmalkoc.pecs">
     <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" height="50">
   </a>
@@ -18,19 +19,18 @@
 
 ---
 
-
 ## How to Contribute
 
 Before starting, [visit our official webpage](https://gokid.stemegitimciler.org) for detailed project information.
 
 To contribute:
+
 1. Fork the repository.
 2. Make your changes.
 3. Submit a pull request.
 4. For significant changes, open an issue to discuss your ideas before starting work.
 
 ---
-
 
 ### Prerequisites
 
@@ -50,14 +50,51 @@ To contribute:
 3. **Install VS Code**:
     - Install Visual Studio Code from the [official website](https://code.visualstudio.com/).
     - Install the Flutter and Dart extensions from the VS Code Marketplace.
-    - Ensure VS Code recognizes the Flutter installation: 
+    - Ensure VS Code recognizes the Flutter installation:
 
 4. **Install Android Studio** (for Android builds):
-    - Install Android Studio and set up the emulator. Ensure `adb` (Android Debug Bridge) is accessible in your terminal.
+    - Install Android Studio and set up the emulator. Ensure `adb` (Android Debug Bridge) is accessible in your
+      terminal.
     - Add the Android SDK to your system path (if not done automatically).
 
 5. **Install Firebase CLI** (optional but recommended for Firebase project management):
     - Follow the [Firebase CLI Setup Guide](https://firebase.google.com/docs/cli).
+
+### 6. **Setting up Firebase Functions (JavaScript)**
+
+- Firebase Functions are used for backend operations, such as sending notifications.
+
+### 7. **Deploy the Function**
+
+- Deploy the function to Firebase using the following command:
+
+  ```bash
+  firebase deploy --only functions
+  ```
+
+- After deployment, Firebase will provide a URL for your function. Use this URL to make HTTP requests and send notifications.
+
+### 8. **Testing the Function**
+
+- You can test the above function by making a `POST` request:
+
+  #### Example POST Request
+  ```bash
+  curl -X POST https://<your-region>-<your-project>.cloudfunctions.net/sendNotification \
+  -H "Content-Type: application/json" \
+  -d '{
+    "token": "DEVICE_FCM_TOKEN",
+    "title": "Hello!",
+    "body": "This is a test notification."
+  }'
+  ```
+
+---
+
+### Notes:
+- **Firebase Admin SDK**: The Firebase Admin SDK is used to send notifications. This SDK allows backend operations like sending notifications, reading/writing to the database, etc.
+- **FCM Token**: The FCM token of the device receiving the notification is required. This token is obtained on the client side and sent to the backend.
+
 
 ---
 
@@ -98,12 +135,14 @@ To contribute:
     - Add an **Android App**:
         1. Click the **Add App** button and select **Android**.
         2. Enter your app's package name (e.g., `com.gokid.mobile`).
-        3. Download the `google-services.json` file after configuration and place it in the `android/app/` folder of your project.
+        3. Download the `google-services.json` file after configuration and place it in the `android/app/` folder of
+           your project.
 
     - Add an **iOS App**:
         1. Click the **Add App** button and select **iOS**.
         2. Enter your app’s bundle ID (e.g., `com.gokid.mobile`).
-        3. Download the `GoogleService-Info.plist` file after configuration and place it in the `ios/Runner/` folder of your project.
+        3. Download the `GoogleService-Info.plist` file after configuration and place it in the `ios/Runner/` folder of
+           your project.
 
 4. **Configure Environment Variables**
     - Create a `.env` file in the project root with your Firebase credentials. Use the format below:
@@ -118,7 +157,6 @@ To contribute:
     - Refer to the example file `env.example` for guidance.
     - --OR--
     - Just Copy-Paste google-services.json file from Firebase.(Basic Setup)
-
 
 
 5. **Run the Application**
@@ -137,7 +175,6 @@ To contribute:
           flutter build apk --release
           ```
 
-
 ---
 
 ## License
@@ -152,8 +189,10 @@ For full details, refer to the [LICENSE file](LICENSE.md).
 ## Wiki
 
 The **GoKid Wiki** provides additional resources, guides, and community contributions. Here you can find:
+
 - **User Guide**: Step-by-step instructions on how to set up and use the app.
-- **Developer Documentation**: Information for developers looking to contribute, including setup instructions and coding standards.
+- **Developer Documentation**: Information for developers looking to contribute, including setup instructions and coding
+  standards.
 - **FAQ**: Common questions and answers about the app and its features.
 
 Visit the [GoKid Wiki](https://github.com/erenmalkoc/gokid/wiki) for more details and resources.
