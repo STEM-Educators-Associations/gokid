@@ -22,7 +22,7 @@ This software, **GoKid**, is open-source but subject to the following terms and 
 
 ## 3. Commercial Use
 - Commercial use of this software, whether in its original form or as a derivative, is **strictly prohibited** without prior written consent from the copyright holder (**STEM Educators Associations**).
-- To request permission for commercial use, please contact **STEM Educators Associations** at **[Your Contact Information]**.
+- To request permission for commercial use, please contact **STEM Educators Associations** at **mobil@stemegitimciler.org**.
 
 ---
 
@@ -72,7 +72,7 @@ For the full text of the GNU GPL-2.0 License, see:
 
 ## 8. Custom Licensing Terms
 - By using this software, you agree to the terms outlined in this license document.
-- For additional inquiries about the licensing terms or for obtaining permissions for prohibited uses, contact **STEM Educators Associations** at **[Your Contact Information]**.
+- For additional inquiries about the licensing terms or for obtaining permissions for prohibited uses, contact **STEM Educators Associations** at **mobil@stemegitimciler.org**.
 
 ---
 
